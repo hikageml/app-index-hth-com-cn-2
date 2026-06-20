@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友博体育 – 再次访问 · 持续关注</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e1e1e;
+            line-height: 1.6;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0.5rem;
+            border-bottom: 1px solid #e5ddd4;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.02em;
+            color: #3d352c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5c5247;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #b35f2b;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 650;
+            line-height: 1.3;
+            color: #2b261f;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #4f473e;
+            max-width: 640px;
+        }
+
+        /* 引用块 */
+        .callout-box {
+            background: #f3ede5;
+            border-left: 4px solid #b35f2b;
+            padding: 1.2rem 1.4rem;
+            margin: 2rem 0 2.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .callout-box p {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .callout-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout-box a {
+            color: #b35f2b;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .callout-box a:hover {
+            text-decoration: none;
+            color: #8e4a1d;
+        }
+
+        /* 场景模块 */
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9a8b7c;
+            margin-bottom: 0.6rem;
+            border-top: 1px solid #e2d8ce;
+            padding-top: 2rem;
+        }
+
+        .scene-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 1.8rem 0 2.8rem;
+        }
+
+        .scene-card {
+            background: #ffffffef;
+            padding: 1.5rem 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eae3da;
+        }
+
+        .scene-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2f2a23;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #4e473f;
+        }
+
+        /* 常见说明（简约faq） */
+        .faq-summary {
+            margin: 2.5rem 0 1.5rem;
+            padding: 1.5rem 1.8rem;
+            background: #f4efe9;
+            border-radius: 14px;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #362f27;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #2f2922;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #534a40;
+            margin: 0;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 底部 */
+        .footnote {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e1d7cc;
+            font-size: 0.85rem;
+            color: #6f655a;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0 1rem;
+            }
+
+            .top-nav {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .scene-card {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .faq-summary {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航 -->
+        <nav class="top-nav">
+            <span class="nav-title">友博体育</span>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#scenes">场景</a></li>
+                <li><a href="#faq">说明</a></li>
+            </ul>
+        </nav>
+
+        <!-- hero 介绍 -->
+        <div class="hero" id="home">
+            <h1>再次访问，持续关注</h1>
+            <p>信息聚合与运动服务的轻量入口。对于经常使用的平台，收藏与回访是保持高效的习惯。友博体育并非一次性浏览页，而是值得标记书签、反复查阅的内容起点。</p>
+        </div>
+
+        <!-- 提示框 / 引用块：自然嵌入链接 -->
+        <div class="callout-box">
+            <p>如果你曾访问过 <a href="https://portal-youbosports.com">友博体育</a>，会发现它的结构与内容会随着运营节奏迭代。定期回来看看，比每次临时搜索更节省精力。将链接添加至浏览器收藏夹，可避免遗漏重要的通知或调整。</p>
+            <p>平台的核心定位始终围绕运动资讯与聚合服务，界面以实用为主，适合快速浏览。</p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <span class="section-label" id="scenes">常见使用场景</span>
+        <div class="scene-grid">
+            <div class="scene-card">
+                <h3>日常浏览 · 信息同步</h3>
+                <p>每天或每周固定时间打开 <strong>友博体育</strong>，了解最新发布的运动动态、赛事简报或平台公告。适合将页面设为浏览器起始页之一，减少信息滞后。</p>
+            </div>
+            <div class="scene-card">
+                <h3>收藏夹回访</h3>
+                <p>收藏的链接若长期不打开，容易失效或内容过时。建议每隔一段时间通过书签重新访问 <strong>友博体育</strong>，确认各项功能与栏目是否仍符合需求。若页面结构有调整，及时更新收藏。</p>
+            </div>
+            <div class="scene-card">
+                <h3>轻量查询 · 快速定位</h3>
+                <p>当需要查阅特定运动分类、历史文章或常见问题解答时，直接访问 <a href="https://portal-youbosports.com">友博体育</a> 的首页，通过导航或搜索入口定位目标内容。无需经过第三方跳转，路径更短。</p>
+            </div>
+        </div>
+
+        <!-- 常见说明 (faq 摘要) -->
+        <div class="faq-summary" id="faq">
+            <h2>常见说明</h2>
+            <div class="faq-item">
+                <strong>友博体育是否每天更新？</strong>
+                <p>更新频率视内容类型而定。资讯类版块保持较高更新节奏，固定栏目如“常见问题”则根据平台调整不定期修订。建议每次访问时留意首屏的时间戳或最新条目。</p>
+            </div>
+            <div class="faq-item">
+                <strong>需要注册或登录吗？</strong>
+                <p>大部分首页内容可直接浏览，部分深度服务或个性化功能可能需要账户支持。详情请在站内查看相应指引。</p>
+            </div>
+            <div class="faq-item">
+                <strong>如何收藏更高效？</strong>
+                <p>推荐将 <a href="https://portal-youbosports.com">友博体育</a> 的完整域名添加至浏览器书签栏，并定期整理书签。若页面长期无变化，可取消收藏以减少冗余。</p>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footnote">
+            保持简洁 · 回访即价值
+        </div>
+    </div>
+</body>
+</html>

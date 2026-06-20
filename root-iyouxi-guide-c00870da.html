@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 日常即游戏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fafaf6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1d1d1f;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.4rem 1.6rem 3.6rem;
+    }
+    /* hero */
+    .hero {
+      margin-bottom: 4rem;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      color: #121212;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #4b4b4e;
+      max-width: 540px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-meta {
+      font-size: 0.9rem;
+      color: #8a8a8e;
+      border-top: 1px solid #e5e5e0;
+      padding-top: 1.2rem;
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* 通用章节 */
+    section {
+      margin-bottom: 3.4rem;
+    }
+    h2 {
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      color: #161618;
+      border-left: 3px solid #c0b7a8;
+      padding-left: 0.9rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #2a2a2d;
+    }
+    p, li {
+      color: #3b3b3f;
+      font-size: 1rem;
+      margin-bottom: 0.7rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      padding-left: 1.6rem;
+      position: relative;
+      margin-bottom: 0.65rem;
+    }
+    ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #b4aa98;
+      font-weight: 300;
+    }
+
+    /* 优势卡片（自适应） */
+    .advantages {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+      margin-top: 1rem;
+    }
+    .adv-card {
+      background: #ffffff;
+      padding: 1.3rem 1.2rem;
+      border-radius: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid #efede8;
+      transition: transform 0.15s;
+    }
+    .adv-card:hover {
+      transform: translateY(-3px);
+    }
+    .adv-card h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
+      color: #1d1d1f;
+    }
+    .adv-card p {
+      font-size: 0.92rem;
+      color: #5a5a5e;
+      margin-bottom: 0;
+    }
+
+    /* 引用 / 场景块 */
+    .scene-box {
+      background: #f4f2ed;
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem;
+      margin: 1.6rem 0;
+    }
+    .scene-box p {
+      font-size: 0.98rem;
+      margin-bottom: 0.5rem;
+    }
+    .scene-box strong {
+      color: #1f1f21;
+    }
+
+    /* FAQ 摘要 */
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #eae8e3;
+    }
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 550;
+      font-size: 1.02rem;
+      margin-bottom: 0.2rem;
+      color: #1b1b1d;
+    }
+    .faq-a {
+      font-size: 0.95rem;
+      color: #545459;
+      padding-left: 0.2rem;
+    }
+
+    /* 底部链接区 */
+    .footer-links {
+      margin-top: 3.2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #dfddd7;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem 1.5rem;
+      font-size: 0.9rem;
+      color: #5a5a5e;
+    }
+    .footer-links a {
+      color: #3b3b3f;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .footer-links a:hover {
+      border-bottom-color: #a09786;
+    }
+    .brand-link {
+      font-weight: 500;
+      color: #232326;
+    }
+    .brand-link a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .brand-link a:hover {
+      opacity: 0.75;
+    }
+
+    /* responsive */
+    @media (max-width: 520px) {
+      .page { padding: 1.8rem 1.2rem 3rem; }
+      .hero h1 { font-size: 2rem; }
+      .advantages { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 区 -->
+    <header class="hero">
+      <h1>生活里，总有一块「爱游戏」的自留地</h1>
+      <p>不管是午休时的一局解谜，还是周末沉浸的开放世界——游戏早已不只是消遣，它成了我们放松、社交、保持好奇的日常方式。</p>
+      <div class="hero-meta">
+        <span>🎮 轻量 · 探索 · 连接</span>
+        <span>✦ 适合所有玩家</span>
+      </div>
+    </header>
+
+    <!-- 优势区：为什么需要爱游戏 -->
+    <section>
+      <h2>为什么是「爱游戏」？</h2>
+      <div class="advantages">
+        <div class="adv-card">
+          <h4>🎯 兴趣驱动</h4>
+          <p>不追热门榜单，只推荐真正好玩的、有巧思的作品，从独立佳作到经典重访。</p>
+        </div>
+        <div class="adv-card">
+          <h4>🧘 不内耗</h4>
+          <p>没有排行榜焦虑，没有社交压力。你按自己的节奏玩，想停就停。</p>
+        </div>
+        <div class="adv-card">
+          <h4>🌱 发现角落</h4>
+          <p>除了大作，还有那些被忽略的叙事小品、实验玩法，以及跟你一样的普通玩家故事。</p>
+        </div>
+        <div class="adv-card">
+          <h4>📮 每周一份灵感</h4>
+          <p>每期内容像朋友推荐一样自然——可能是某个游戏片段，也可能是一段原声带。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 说明区：主题切入 + 场景 -->
+    <section>
+      <h2>游戏，回到它本来的位置</h2>
+      <p>我们常常忘记，游戏最开始的样子就是「好玩」。不需要精通，不需要全成就，只是打开、尝试、然后沉浸几分钟或几小时。<a href="https://root-iyouxi.com" style="color: #3b3b3f; text-decoration: underline; text-underline-offset: 3px; font-weight: 500;">爱游戏</a> 想记录的就是这种状态——没有目的，但有温度。</p>
+      
+      <div class="scene-box">
+        <p><strong>📌 几个普通场景</strong></p>
+        <p>• 通勤地铁上，用碎片时间搭了一座像素花园。</p>
+        <p>• 跟异地朋友连麦，在同一个世界里各自钓鱼、看日落。</p>
+        <p>• 深夜睡不着，打开一款走路模拟器，听着风声走完一段故事。</p>
+        <p style="margin-top: 0.2rem;">——这些时刻，就是「爱游戏」想留住的东西。</p>
+      </div>
+
+      <p style="margin-top: 1rem;">这里没有“你必须玩”的清单，只有一个个真实的人和他们正在玩的游戏。哪怕你很久没碰过手柄，也能在这里找到一点熟悉的共鸣。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+      <h2>你可能会好奇的事</h2>
+      <div class="faq-item">
+        <div class="faq-q">❓ 这里只聊电子游戏吗？</div>
+        <div class="faq-a">不限于此。桌游、运动、甚至日常里那些带有「游戏感」的生活技巧，只要带着玩家的心，都可能被聊到。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 内容更新频率如何？</div>
+        <div class="faq-a">每周至少一篇完整文章，偶尔会有短小的「游戏瞬间」栏目。不搞日更轰炸，更希望每篇都值得读。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">❓ 新手能看懂吗？</div>
+        <div class="faq-a">当然。我们尽量避免专业黑话，就算提到机制也会用生活化的方式解释。毕竟玩游戏的初心，不该被术语挡住。</div>
+      </div>
+    </section>
+
+    <!-- 底部链接 + 品牌锚点 -->
+    <footer class="footer-links">
+      <div class="brand-link">
+        <a href="https://root-iyouxi.com">爱游戏</a>
+      </div>
+      <div>
+        <span style="margin-right: 0.8rem;">关于</span>
+        <span style="margin-right: 0.8rem;">存档</span>
+        <span>订阅</span>
+      </div>
+      <div>© root-iyouxi.com</div>
+    </footer>
+  </div>
+</body>
+</html>

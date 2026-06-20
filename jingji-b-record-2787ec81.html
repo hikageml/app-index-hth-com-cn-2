@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>竞技宝 · 索引与资料整理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #163440;
+      padding: 0 1rem 3rem;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* 顶部导航 */
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0 0.8rem;
+      border-bottom: 1px solid #cde2e9;
+    }
+
+    .site-logo {
+      font-weight: 600;
+      font-size: 1.7rem;
+      letter-spacing: 1px;
+      color: #0a6b7c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1c5970;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.2rem 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #0f9d8e;
+      color: #053640;
+    }
+
+    /* Hero 区 — 资料索引角度 */
+    .hero {
+      margin: 2.5rem 0 2.8rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      color: #0a4b5c;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span {
+      color: #0f9d8e;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 1.2rem auto 0;
+      font-size: 1.05rem;
+      color: #285e6e;
+      background: #e5f1f5;
+      padding: 0.9rem 1.6rem;
+      border-radius: 48px;
+      display: inline-block;
+    }
+
+    .hero p a {
+      color: #0f7a8a;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #80c4c0;
+    }
+
+    .hero p a:hover {
+      color: #054c58;
+      text-decoration-color: #0f9d8e;
+    }
+
+    /* 核心介绍 卡片网格布局 */
+    .core-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0 3.2rem;
+    }
+
+    .core-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.8rem 1.4rem 1.8rem 1.6rem;
+      box-shadow: 0 6px 20px rgba(15, 107, 112, 0.06);
+      border: 1px solid #d9ebf0;
+      transition: 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .core-card:hover {
+      border-color: #2ca89b;
+      box-shadow: 0 10px 28px rgba(15, 130, 125, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: #daf1ee;
+      color: #0a6b6b;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+      letter-spacing: 0.2px;
+    }
+
+    .core-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #124453;
+    }
+
+    .core-card p {
+      font-size: 0.95rem;
+      color: #265666;
+      margin-bottom: 0.3rem;
+    }
+
+    .core-card .source-hint {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #4c7e88;
+      border-top: 1px dashed #bee0e6;
+      padding-top: 0.5rem;
+    }
+
+    /* 三个场景模块 — 网格卡片变体 */
+    .scenes-section {
+      margin: 3rem 0 2.5rem;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #d5edee;
+      padding: 0.3rem 1.2rem 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #0d5563;
+      margin-bottom: 1.2rem;
+    }
+
+    .scenes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.3rem;
+    }
+
+    .scene-item {
+      background: white;
+      padding: 1.3rem 1.2rem 1.5rem;
+      border-radius: 28px;
+      border: 1px solid #d2e9ed;
+      box-shadow: 0 2px 12px rgba(12, 87, 87, 0.03);
+      transition: 0.15s;
+    }
+
+    .scene-item:hover {
+      border-color: #2aad9a;
+      background: #f7fdfe;
+    }
+
+    .scene-item .emoji-marker {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .scene-item h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #124453;
+      margin: 0.2rem 0 0.4rem;
+    }
+
+    .scene-item p {
+      font-size: 0.9rem;
+      color: #255b69;
+    }
+
+    .scene-item .meta-tag {
+      display: inline-block;
+      background: #e5f6f2;
+      border-radius: 20px;
+      padding: 0.15rem 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #0b6771;
+      margin-top: 0.4rem;
+    }
+
+    /* 常见说明 (FAQ 摘要) */
+    .faq-summary {
+      margin: 3.2rem 0 1.8rem;
+      background: #e3f2f5;
+      border-radius: 40px;
+      padding: 2rem 2rem 1.8rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #0b4d5c;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(2px);
+      padding: 0.9rem 1rem 1rem 1.2rem;
+      border-radius: 30px;
+      border-left: 4px solid #1f9b8f;
+    }
+
+    .faq-item strong {
+      color: #09515e;
+      font-weight: 600;
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      font-size: 0.88rem;
+      color: #1d5a67;
+    }
+
+    .faq-item a {
+      color: #0c7f7f;
+      text-decoration: underline dotted;
+      text-underline-offset: 2px;
+    }
+
+    .faq-item a:hover {
+      color: #033a44;
+      text-decoration: underline;
+    }
+
+    /* 底部 */
+    .footer-note {
+      margin-top: 3.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #48747e;
+      border-top: 1px solid #cde0e5;
+      padding-top: 1.8rem;
+    }
+
+    .footer-note a {
+      color: #0f7a86;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #9acbcb;
+    }
+
+    .footer-note a:hover {
+      border-bottom-color: #0f9d8e;
+      color: #033e48;
+    }
+
+    /* 响应式 */
+    @media (max-width: 800px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.2rem;
+      }
+      .scenes-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .scenes-grid {
+        grid-template-columns: 1fr;
+      }
+      .core-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-summary {
+        padding: 1.6rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <div class="site-logo">◈ 索引·竞技宝</div>
+    <div class="nav-links">
+      <a href="#core">资料整理</a>
+      <a href="#scenes">使用场景</a>
+      <a href="#faq">常见说明</a>
+    </div>
+  </nav>
+
+  <!-- Hero — 从资料整理和索引切入 -->
+  <header class="hero">
+    <h1>有效信息组织 · <span>竞技宝</span></h1>
+    <p>围绕 <a href="https://jingji-b.com">竞技宝</a> 整理的结构化资料与场景索引，便于快速定位与了解。</p>
+  </header>
+
+  <!-- 核心介绍：三个卡片，以资料整理角度呈现 -->
+  <section id="core" class="core-grid">
+    <div class="core-card">
+      <span class="card-tag">信息归档</span>
+      <h3>平台功能轮廓</h3>
+      <p>从公开可查的信息梳理，竞技宝作为综合性质的数字化平台，涉及资讯聚合、数据查询与内容索引服务。资料覆盖多个领域，信息源持续更新。</p>
+      <div class="source-hint">📋 基于公开资料整理 · 2025</div>
+    </div>
+    <div class="core-card">
+      <span class="card-tag">索引结构</span>
+      <h3>内容分类方式</h3>
+      <p>按照事件类型、数据维度、更新频次等划分模块。以分类标签与关键词链接提高查找效率，降低信息过载，适合需要快速检索的日常场景。</p>
+      <div class="source-hint">🏷️ 分类标签 · 动态调整</div>
+    </div>
+    <div class="core-card">
+      <span class="card-tag">获取途径</span>
+      <h3>直达与参考</h3>
+      <p>通过站点 <a href="https://jingji-b.com">竞技宝</a> 可以查阅最新的信息索引与模块内容。资料卡片保持精简，且附有场景说明，辅助判断信息适用性。</p>
+      <div class="source-hint">🔗 参考源 · 定期验证</div>
+    </div>
+  </section>
+
+  <!-- 三个场景模块 (差异化) -->
+  <section id="scenes" class="scenes-section">
+    <div class="section-label">📌 三个典型使用场景</div>
+    <div class="scenes-grid">
+      <div class="scene-item">
+        <div class="emoji-marker">📚</div>
+        <h4>资料交叉核对</h4>
+        <p>将平台上索引的多条目进行比较，提取共性描述与数据差异点，适合做信息比对与初步分析。</p>
+        <span class="meta-tag">信息素养</span>
+      </div>
+      <div class="scene-item">
+        <div class="emoji-marker">🔍</div>
+        <h4>快速话题扫描</h4>
+        <p>利用分类入口浏览不同模块下的标题与摘要，短时间内把握当前更新方向与热点分布。</p>
+        <span class="meta-tag">效率阅读</span>
+      </div>
+      <div class="scene-item">
+        <div class="emoji-marker">🧩</div>
+        <h4>知识片段链接</h4>
+        <p>从某个具体条目出发，借助站内关联索引跳转到相近主题，逐渐拼凑出更完整的知识图景。</p>
+        <span class="meta-tag">关联学习</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见说明/FAQ摘要 -->
+  <section id="faq" class="faq-summary">
+    <h2>❔ 常见说明 · 索引视角</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <strong>信息时效性如何？</strong>
+        <p>平台内容持续迭代，部分索引存在滞后。建议结合 <a href="https://jingji-b.com">竞技宝</a> 内时间戳与更新记录判断。</p>
+      </div>
+      <div class="faq-item">
+        <strong>资料整理是否包含主观评价？</strong>
+        <p>所有卡片与场景描述尽量保持中性，以客观归纳为主。具体使用中仍需自行验证关键信息。</p>
+      </div>
+      <div class="faq-item">
+        <strong>移动端浏览体验</strong>
+        <p>页面采用响应式网格与适配间距，在手机与平板上可正常阅读卡片与导航。</p>
+      </div>
+    </div>
+    <p style="margin-top: 1.2rem; font-size: 0.88rem; color: #1c5b67; background: #d2e9ed; padding: 0.4rem 1rem; border-radius: 60px; display: inline-block;">
+      更多索引细节可直接参考平台内分类目录。
+    </p>
+  </section>
+
+  <!-- 底部 自然嵌入链接 -->
+  <footer class="footer-note">
+    <p>内容基于公开资料整理 · 索引页 · <a href="https://jingji-b.com">竞技宝</a> 提供信息聚合与导航服务</p>
+  </footer>
+
+</div>
+</body>
+</html>
